@@ -1,0 +1,60 @@
+# Shell
+alias c="clear"
+alias cls="clear" # Dirty windows command recognition
+
+alias cd..="cd .."
+alias dc="cd"
+alias ..="cd .."
+alias .2="cd ../../"
+alias .3="cd ../../../"
+alias .4="cd ../../../../"
+alias .5="cd ../../../../../"
+
+alias mkdir="mkdir -pv"
+alias ll="ls -laF --color=auto"
+alias sl="ls"
+alias h="history"
+
+# Vim
+alias vi="vim"
+alias svi="sudo vi"
+alias svim="sudo vim"
+alias edit="vim"
+
+# Grep
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+# Git Commands
+alias git-pretty-log="git log --oneline --graph --color --all --decorate"
+
+# General development
+alias valgrind-very-verbose="valgrind -v --leak-check=full"
+alias valgrind-vv-verbose="valgrind -v --leak-check=full --show-leak-kinds=all"
+alias sha1='openssl sha1'
+alias diff='colordiff'
+
+# Distro updates
+alias apt-get="sudo apt-get"
+alias deb-upy="sudo apt-get --yes"
+alias deb-up="sudo apt-get update && sudo apt-get upgrade"
+
+alias fed-up="sudo dnf update"
+alias fed-upy="sudo dnf update -y"
+alias fed-raw-en-repo="sudo dnf install fedora-repos-rawhide"
+alias fed-raw-install="sudo dnf install --enablerepo rawhide"
+alias fed-raw-instally="sudo dnf install -y --enablerepo rawhide"
+
+# Repos
+alias git subup='git submodule update --init --recursive'
+alias git clone='git clone --recurse-submodules -j8'
+alias repo-manifest-diff='repo manifest -r --suppress-upstream-revision -o .repo/manifests/update.xml && repo diffmanifests default.xml update.xml | tee .repo/manifests/manifest.diff'
+alias repo-manifest-update='cp .repo/manifests/update.xml .repo/manifests/default.xml'
+alias repo-manifest-commit='cd .repo/manifests && git add default.xml && git commit -t manifest.diff && cd -'
+alias repo-manifest-push='cd .repo/manifests && git push origin default:master && cd -'
+
+# Other useful commands
+alias weather='curl wttr.in'
+alias myip="curl http://ipecho.net/plain; echo"
+alias wget='wget -c'
