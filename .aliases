@@ -11,7 +11,7 @@ alias .4="cd ../../../../"
 alias .5="cd ../../../../../"
 
 alias mkdir="mkdir -pv"
-alias ll="ls -laF --color=auto"
+alias ll="ls -laF"
 alias sl="ls"
 alias h="history"
 
@@ -28,6 +28,9 @@ alias fgrep="fgrep --color=auto"
 
 # Git Commands
 alias git-pretty-log="git log --oneline --graph --color --all --decorate"
+alias git clone='git clone --recurse-submodules -j8'
+alias gitsub='git submodule update --init --recursive'
+alias gits='git status'
 
 # General development
 alias valgrind-very-verbose="valgrind -v --leak-check=full"
@@ -46,9 +49,9 @@ alias fed-raw-en-repo="sudo dnf install fedora-repos-rawhide"
 alias fed-raw-install="sudo dnf install --enablerepo rawhide"
 alias fed-raw-instally="sudo dnf install -y --enablerepo rawhide"
 
+alias arch-up="sudo pacman -Syu"
+
 # Repos
-alias git subup='git submodule update --init --recursive'
-alias git clone='git clone --recurse-submodules -j8'
 alias repo-manifest-diff='repo manifest -r --suppress-upstream-revision -o .repo/manifests/update.xml && repo diffmanifests default.xml update.xml | tee .repo/manifests/manifest.diff'
 alias repo-manifest-update='cp .repo/manifests/update.xml .repo/manifests/default.xml'
 alias repo-manifest-commit='cd .repo/manifests && git add default.xml && git commit -t manifest.diff && cd -'
@@ -58,3 +61,5 @@ alias repo-manifest-push='cd .repo/manifests && git push origin default:master &
 alias weather='curl wttr.in'
 alias myip="curl http://ipecho.net/plain; echo"
 alias wget='wget -c'
+
+mkdirgo() { mkdir -p "${1}" && cd "${1}" ; }
