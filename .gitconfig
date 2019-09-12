@@ -5,3 +5,5 @@
 	home = config user.email \"me@example.com\"
 	work = config user.email \"me@work.com\"
 	cl = clone --recurse-submodules -j8
+    subup = submodule update --init --recursive
+    plog = log --oneline --graph --color --all --decorate
