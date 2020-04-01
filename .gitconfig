@@ -7,3 +7,4 @@
     cl = clone --recurse-submodules -j8
     subup = submodule update --init --recursive
     plog = log --oneline --graph --color --all --decorate
+    reset-auth = "!f() { git commit --amend --author=\"${1}\" --no-edit; }; f"
